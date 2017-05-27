@@ -1,7 +1,7 @@
 import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 
 @Injectable()
-export class ComponentInjectorService {
+export class ComponentInjector {
 
   constructor(private resolver: ComponentFactoryResolver) {
   }

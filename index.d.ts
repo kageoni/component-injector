@@ -1,16 +1,13 @@
-// Type definitions for RxPubSub
-// Project: RxPubSub
-// Definitions by: tomsa.md
-
-import {ReplaySubject} from 'rxjs/ReplaySubject'
-import {Subscription} from 'rxjs/Subscription';
+// Type definitions for ComponentInjector
+// Project: ComponentInjector
+// Definitions by: md.md
 
 /*~ If this module is a UMD module that exposes a global variable 'myClassLib' when
  *~ loaded outside a module loader environment, declare that global here.
  *~ Otherwise, delete this declaration.
  */
 
-// export as namespace RxPubSub;
+// export as namespace ComponentInjector;
 
 /*~ This declaration specifies that the class constructor function
  *~ is the exported object from the file
@@ -20,29 +17,8 @@ import {Subscription} from 'rxjs/Subscription';
  *~ place them in this block.
  */
 
-declare class RxPubSub {
-    protected events: any;
-
-    public publish(eventName: string, data: any, previousMessagesNr?: number): RxPubSub;
-
-    public subscribe(eventName: string, callback: (data?: any) => any, previousMessagesNr?: number): Subscription;
-
-    public subscribeOnce(eventName: string, callback: (data?: any) => any): Subscription|boolean;
-
-    public unsubscribe(subscriber: any): RxPubSub;
-
-    public dispose(eventName: string): RxPubSub;
-
-    public hasSubscribers(eventName: string): boolean;
-
-    public getEvents(): any;
-
-    public getSubjects(): any;
-
-    protected getSubjectByEventName(eventName: string, previousMessagesNr: number): ReplaySubject<any>;
-
-    protected isCallback(callback: (data?: any) => any): boolean;
+declare class ComponentInjector {
 
 }
 
-export {RxPubSub, Subscription};
+export {ComponentInjector};
