@@ -1,0 +1,44 @@
+{
+  "name": "component-injector",
+  "version": "0.0.1",
+  "description": "Component Injector service which allows to inject dynamically components into angular2 projects",
+  "main": "src/component-injector.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "start": "webpack --config webpack.config.js && webpack-dev-server",
+    "build:webpack": "webpack --config webpack.prod.config.js && webpack --config webpack.config.js",
+    "build": "npm run clean && npm run build:webpack",
+    "clean": "rimraf build",
+    "test": "karma start"
+  },
+  "author": {
+    "name": "kageoni",
+    "email": "kageoni@md.md",
+    "url": "https://github.com/kageoni"
+  },
+  "repository": "kageoni/component-injector",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kageoni/component-injector/blob/master/LICENSE"
+    }
+  ],
+  "keywords": [
+    "angular",
+    "angular2",
+    "ng2",
+    "component",
+    "injector",
+    "service",
+    "component-injector",
+    "dynamically",
+    "inject",
+    "selector"
+  ],
+  "dependencies": {
+    "@angular/core": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~2.2.0"
+  }
+}
