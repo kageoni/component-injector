@@ -99,4 +99,4 @@ Method returns nothing - `void`.
 [https://github.com/kageoni/component-injector](https://github.com/kageoni/component-injector)
 
 ### <a name="version"></a>6. Version
-0.0.3
+0.0.4

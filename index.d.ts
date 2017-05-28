@@ -20,7 +20,7 @@ import {ComponentFactory, ComponentFactoryResolver, ComponentRef, ViewContainerR
  */
 
 declare class ComponentInjector {
-  constructor(private resolver: ComponentFactoryResolver);
+  constructor(resolver: ComponentFactoryResolver);
 
   public inject(container: ViewContainerRef, componentSelector: string): ComponentRef<any>;
 
