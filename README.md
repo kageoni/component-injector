@@ -21,7 +21,7 @@ npm install component-injector --save-dev
 In order to use the `ComponentInjector` service you have to include/import 
 it into your application:
 
-```
+```typescript
 import {ComponentInjector} from "component-injector";
 ```
 
