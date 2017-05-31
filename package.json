@@ -1,6 +1,6 @@
 {
   "name": "component-injector",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Component Injector service which allows to inject dynamically components into angular2 projects",
   "main": "src/component-injector.ts",
   "types": "index.d.ts",
@@ -36,9 +36,9 @@
     "selector"
   ],
   "dependencies": {
-    "@angular/core": "^4.0.0"
+    "@angular/core": "^2.3.1"
   },
   "devDependencies": {
-    "typescript": "~2.2.0"
+    "typescript": "~2.0.3"
   }
 }
