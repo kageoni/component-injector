@@ -29,7 +29,7 @@ Register it as a service provider in your `@NgModule(...)`:
 ```typescript
 @NgModule({
   //...
-  providers: [ComponentInjectorService],
+  providers: [ComponentInjector],
   //...
 })
 ```
@@ -99,4 +99,4 @@ Method returns nothing - `void`.
 [https://github.com/kageoni/component-injector](https://github.com/kageoni/component-injector)
 
 ### <a name="version"></a>6. Version
-0.0.5
+0.0.9

@@ -1,6 +1,6 @@
 {
   "name": "component-injector",
-  "version": "0.0.5",
+  "version": "0.0.9",
   "description": "Component Injector service which allows to inject dynamically components into angular2 projects",
   "main": "src/component-injector.ts",
   "types": "index.d.ts",
@@ -36,9 +36,14 @@
     "selector"
   ],
   "dependencies": {
-    "@angular/core": "^4.0.0"
+    "@angular/core": "*",
+    "rxjs": "^5.4.0"
   },
   "devDependencies": {
-    "typescript": "~2.2.0"
+    "compression-webpack-plugin": "^0.4.0",
+    "ts-loader": "^1.2.2",
+    "typescript": "~2.2.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }
