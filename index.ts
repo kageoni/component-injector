@@ -1,0 +1,1 @@
+export {ComponentInjector} from './';
