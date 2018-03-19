@@ -41,8 +41,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {ContainerComponent} from './container/container.component';
-import {HeroComponent} from './hero/hero.component';
 
 import {ComponentInjector, ComponentInjectorModule} from 'component-injector';
 
