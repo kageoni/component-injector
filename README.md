@@ -41,6 +41,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
+import {ContainerComponent} from './container/container.component';
+import {HeroComponent} from './hero/hero.component';
 
 import {ComponentInjector, ComponentInjectorModule} from 'component-injector';
 
@@ -49,7 +51,9 @@ const entryComponents: any[] = [HeroComponent];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContainerComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ import {ComponentInjector} from "component-injector";
 add it as a parameter into your constructor, to inject it automatically 
 and use it in the class methods:
 ```typescript
-export class TestComponent {
+export class ContainerComponent {
   @ViewChild('injectContainer', {read: ViewContainerRef}) injectContainer: ViewContainerRef;
   
   constructor(protected componentInjector: ComponentInjector) {
@@ -94,7 +98,7 @@ export class TestComponent {
 }
 ```
 where `injectContainer` is the container element defined in your HTML template 
-and where the dynamic components will be injected (HTML template of the `TestComponent` component):
+and where the dynamic components will be injected (HTML template of the `ContainerComponent` component):
 ```html
 <div #injectContainer></div>
 ```
@@ -149,4 +153,4 @@ Method returns nothing - `void`.
 [https://github.com/kageoni/component-injector](https://github.com/kageoni/component-injector)
 
 ### <a name="version"></a>6. Version
-1.0.0
+1.0.1
