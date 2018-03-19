@@ -36,7 +36,7 @@ Register it in your application's `imports` list of your `@NgModule(...)`:
 
 Using the method `setComponentFactories()` provide the `entryComponents` list of the application's `@NgModule(...)`.  
 The file .`/src/app/app.module.ts`:
-```
+```typescript
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
