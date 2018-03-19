@@ -49,9 +49,7 @@ const entryComponents: any[] = [HeroComponent];
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContainerComponent,
-    HeroComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
