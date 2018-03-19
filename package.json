@@ -1,31 +1,40 @@
 {
   "name": "component-injector",
-  "version": "0.0.10",
-  "description": "Component Injector service which allows to inject dynamically components into angular2 projects",
-  "main": "src/component-injector.ts",
+  "version": "1.0.0",
+  "description": "Component Injector service which allows to inject dynamically components into angular2+ projects",
+  "main": "src/component-injector.module.ts",
   "types": "index.d.ts",
-  "scripts": {
-    "start": "webpack --config webpack.config.js && webpack-dev-server",
-    "build:webpack": "webpack --config webpack.prod.config.js && webpack --config webpack.config.js",
-    "build": "npm run clean && npm run build:webpack",
-    "clean": "rimraf build",
-    "test": "karma start"
-  },
+  "module": "index.js",
   "author": {
     "name": "kageoni",
     "email": "kageoni@md.md",
     "url": "https://github.com/kageoni"
   },
-  "repository": "kageoni/component-injector",
+  "repository": "https://github.com/kageoni/component-injector",
+  "homepage": "https://github.com/kageoni/component-injector",
+  "bugs": {
+    "url": "https://github.com/kageoni/component-injector/issues",
+    "email": "kageoni@md.md"
+  },
+  "contributors": [],
+  "engines": {},
+  "license": "MIT",
   "licenses": [
     {
       "type": "MIT",
       "url": "https://github.com/kageoni/component-injector/blob/master/LICENSE"
     }
   ],
+  "scripts": {
+    "transpile": "ngc",
+    "minify": "uglifyjs dist/src/nl2br-pipe.module.js --screw-ie8 --compress --mangle --comments --output dist/src/nl2br-pipe.module.min.js",
+    "build": "npm run transpile"
+  },
   "keywords": [
     "angular",
     "angular2",
+    "angular4",
+    "angular5",
     "ng2",
     "component",
     "injector",
@@ -35,15 +44,22 @@
     "inject",
     "selector"
   ],
-  "dependencies": {
-    "@angular/core": "*",
-    "rxjs": "^5.4.0"
-  },
+  "peerDependencies": {},
   "devDependencies": {
-    "compression-webpack-plugin": "^0.4.0",
-    "ts-loader": "^1.2.2",
-    "typescript": "~2.2.0",
-    "webpack": "^1.13.3",
-    "webpack-dev-server": "^1.16.2"
-  }
+    "@angular/common": "^2.3.1",
+    "@angular/compiler": "^2.3.1",
+    "@angular/compiler-cli": "^2.3.1",
+    "@angular/core": "^2.3.1",
+    "@angular/platform-browser": "^2.3.1",
+    "@angular/platform-browser-dynamic": "^2.3.1",
+    "codelyzer": ">=2.0.0",
+    "rollup": "^0.56.3",
+    "rxjs": "^5.5.6",
+    "ts-node": "~2.0.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3",
+    "uglify-js": "^3.3.12",
+    "zone.js": "^0.8.19"
+  },
+  "dependencies": {}
 }

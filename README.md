@@ -8,7 +8,7 @@ component-injector
 6. [Version](#version)
 
 ### <a name="description"></a>1. Description
-`component-injector` or `ComponentInjector` is a Component Injector service which injects dynamically components into angular2 projects
+`component-injector` or `ComponentInjector` is a Component Injector service which injects dynamically components into angular2+ projects
   
 ### <a name="installation"></a>2. Installation
 Install the module into your application and save it as a dev 
@@ -19,22 +19,61 @@ npm install component-injector --save-dev
 
 ### <a name="usage"></a>3. Usage
 In order to use the `ComponentInjector` service you have to include/import 
-it into your application:
+the service and its module, where the service is defined, into your application:
 
 ```typescript
-import {ComponentInjector} from "component-injector";
+import {ComponentInjector, ComponentInjectorModule} from 'component-injector';
 ```
 
-Register it as a service provider in your `@NgModule(...)`:
+Register it in your application's `imports` list of your `@NgModule(...)`:
 ```typescript
 @NgModule({
   //...
-  providers: [ComponentInjector],
+  imports: [ComponentInjectorModule],
   //...
 })
 ```
 
-Import it in your service or other components:
+Using the method `setComponentFactories()` provide the `entryComponents` list of the application's `@NgModule(...)`.  
+The file .`/src/app/app.module.ts`:
+```
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+
+import {AppComponent} from './app.component';
+import {ContainerComponent} from './container/container.component';
+import {HeroComponent} from './hero/hero.component';
+
+import {ComponentInjector, ComponentInjectorModule} from 'component-injector';
+
+// the list of components which can be injected dynamically
+const entryComponents: any[] = [HeroComponent];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ContainerComponent,
+    HeroComponent
+  ],
+  imports: [
+    BrowserModule,
+    ComponentInjectorModule
+  ],
+  providers: [],
+  entryComponents: entryComponents, // <-- don't forget to specify the list in here as well !!!
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+
+  constructor(private componentInjector: ComponentInjector) {
+    // provide the entryComponents list - the list of components which can be injected dynamically
+    this.componentInjector.setComponentFactories(entryComponents);
+  }
+  
+}
+```
+
+Import the service into your service or other components:
 ```typescript
 import {ComponentInjector} from "component-injector";
 ```
@@ -57,6 +96,11 @@ export class TestComponent {
     return result;
   }
 }
+```
+where `injectContainer` is the container element defined in your HTML template 
+and where the dynamic components will be injected (HTML template of the `TestComponent` component):
+```html
+<div #injectContainer></div>
 ```
   
   
@@ -93,10 +137,20 @@ Remove a component by its ComponentRef
   
 *Return:*  
 Method returns nothing - `void`.  
+
+#### setComponentFactories(componentsList: Type<Component>[]): void  
+Define the factories for the entryComponents list 
+  
+*Parameters:*  
+**componentsList** - the list of `entryComponents` defined in the 
+the app's module `@NgModule()`
+  
+*Return:*  
+Method returns nothing - `void`. 
   
   
 ### <a name="git"></a>5. Git repository
 [https://github.com/kageoni/component-injector](https://github.com/kageoni/component-injector)
 
 ### <a name="version"></a>6. Version
-0.0.10
+1.0.0
