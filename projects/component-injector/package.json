@@ -1,0 +1,48 @@
+{
+  "name": "component-injector",
+  "version": "2.0.0",
+  "description": "Component Injector service which allows to inject dynamically components into angular2+ projects",
+  "main": "src/component-injector.module.ts",
+  "types": "index.d.ts",
+  "module": "index.js",
+  "author": {
+    "name": "kageoni",
+    "email": "kageoni@md.md",
+    "url": "https://github.com/kageoni"
+  },
+  "repository": "https://github.com/kageoni/component-injector",
+  "homepage": "https://github.com/kageoni/component-injector",
+  "bugs": {
+    "url": "https://github.com/kageoni/component-injector/issues",
+    "email": "kageoni@md.md"
+  },
+  "contributors": [],
+  "engines": {},
+  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/kageoni/component-injector/blob/master/LICENSE"
+    }
+  ],
+  "scripts": {
+    "transpile": "ngc",
+    "minify": "uglifyjs dist/src/nl2br-pipe.module.js --screw-ie8 --compress --mangle --comments --output dist/src/nl2br-pipe.module.min.js",
+    "build": "npm run transpile"
+  },
+  "keywords": [
+    "angular",
+    "ng2",
+    "ng",
+    "component",
+    "injector",
+    "service",
+    "component-injector",
+    "dynamically",
+    "inject",
+    "selector"
+  ],
+  "peerDependencies": {
+    "@angular/core": ">=2.3.1"
+  }
+}

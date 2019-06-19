@@ -1,35 +1,30 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": true, // is important to generate type definitions files, so the user will have Intellisense for your module.
-    "stripInternal": true, // avoid useless declarations for internal APIs
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "strictNullChecks": true, // must be respected starting from Angular 4.1.
-    "noImplicitAny": true, // must be respected since Angular 4.0
-    "module": "es2015",
-    "moduleResolution": "node",
-    "paths": {
-      "@angular/core": [
-        "node_modules/@angular/core"
-      ]
-    },
-    "rootDir": ".",
-    "outDir": "dist",
-    "sourceMap": true,
-    "inlineSources": true,
-    "target": "es5",
-    "skipLibCheck": true, // avoid being blocked by (harmless) errors in the librairies you use.
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
-      "es2015",
+      "es2018",
       "dom"
-    ]
-  },
-  "files": [
-    "index.ts"
-  ],
-  "angularCompilerOptions": {
-    "strictMetadataEmit": true, // is needed to be AoT compatible.
-    "skipTemplateCodegen": true
+    ],
+    "paths": {
+      "component-injector": [
+        "dist/component-injector"
+      ],
+      "component-injector/*": [
+        "dist/component-injector/*"
+      ]
+    }
   }
 }
