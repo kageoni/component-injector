@@ -4,8 +4,10 @@ component-injector
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Methods](#methods)
-5. [Git repository](#git)
-6. [Version](#version)
+5. [Build](#build)
+6. [Publish to npm](#publish)
+7. [Git repository](#git)
+8. [Version](#version)
 
 ### <a name="description"></a>1. Description
 `component-injector` or `ComponentInjector` is a Component Injector service which injects dynamically components into angular2+ projects
@@ -149,10 +151,27 @@ the app's module `@NgModule()`
 Method returns nothing - `void`. 
   
   
-### <a name="git"></a>5. Git repository
+### <a name="build"></a>5. Build
+To build the final package run this command:
+```
+ng build component-injector
+```
+The build process will generate the packed sources into the `dist` folder.  
+
+### <a name="publish"></a>6. Publish to npm
+To publish the new version to `npm`, go into the `dist` folder:
+```
+cd ./dist/component-injector
+```
+and publish it to npm:
+```
+npm publish --access public
+```
+  
+### <a name="git"></a>7. Git repository
 [https://github.com/kageoni/component-injector](https://github.com/kageoni/component-injector)  
   
 npmjs: [https://www.npmjs.com/package/component-injector](https://www.npmjs.com/package/component-injector)
 
-### <a name="version"></a>6. Version
+### <a name="version"></a>8. Version
 2.0.0
